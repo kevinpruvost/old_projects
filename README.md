@@ -3,6 +3,6 @@
 
 | Project | Description |
 |---------|-------------|
-| [CPool]       | "C Pool" projects |
+| [ISN_project]       | An Hotline Miami-Like I made back to high school in duo. |
 
-[CPool]: https://github.com/kevinpruvost/kevinpruvost_epitech/tree/master/CPool
+[ISN_project]: https://github.com/kevinpruvost/kevinpruvost/tree/master/ISN_project
