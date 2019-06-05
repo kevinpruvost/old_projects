@@ -4,5 +4,8 @@
 | Project | Description |
 |---------|-------------|
 | [ISN_project]       | An Hotline Miami-Like I made back to high school in duo. |
+| [Mini-Chat]       | A Mini-Chat project I made in PHP, HTML, CSS and SQL. |
+
 
 [ISN_project]: https://github.com/kevinpruvost/kevinpruvost/tree/master/ISN_project
+[Mini-Chat]: https://github.com/kevinpruvost/kevinpruvost/tree/master/Mini-chat
