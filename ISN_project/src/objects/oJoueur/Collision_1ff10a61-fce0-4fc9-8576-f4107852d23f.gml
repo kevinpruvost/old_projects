@@ -1,0 +1,1 @@
+game_restart();		//Relancement du jeu dès qu'un ennemi touche le joueur.
