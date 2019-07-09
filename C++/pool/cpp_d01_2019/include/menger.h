@@ -8,6 +8,6 @@
 #ifndef MENGER_H
 #define MENGER_H
 
-int menger(int x, int y);
+int menger(double x, double y, double a, double b, int n);
 
 #endif

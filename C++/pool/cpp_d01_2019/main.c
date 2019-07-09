@@ -14,12 +14,15 @@ int main(int ac, char **av)
     int x = 0;
     int y = 0;
 
-    if (ac != 3) {
+    if (ac != 3)
+    {
         return (84);
-    } else {
+    }
+    else
+    {
         x = atoi(av[1]);
         y = atoi(av[2]);
-        menger(x, y);
+        menger(0, 0, x, x, y);
     }
     return (0);
 }
