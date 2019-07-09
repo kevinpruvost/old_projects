@@ -25,9 +25,9 @@ int my_cat(string filename)
         {
             file.open(filename);
     }
-    catch (ifstream::failure &e)
+    catch (ios_base::failure &e)
     {
-        cerr << "Bug, le fichier ne peut pas être lu.\n";
+        cerr << "my_cat: " << filename << ": No such file or directory" << endl;
         return (84);
     }
     file_size = get_file_size(&file);
