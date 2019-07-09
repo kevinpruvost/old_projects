@@ -11,4 +11,4 @@
 
 [ISN_project]: https://github.com/kevinpruvost/kevinpruvost/tree/master/ISN_project
 [Mini-Chat]: https://github.com/kevinpruvost/kevinpruvost/tree/master/Mini-chat
-[C++] : https://github.com/kevinpruvost/kevinpruvost/tree/master/C%2B%2B
+[C++]: https://github.com/kevinpruvost/kevinpruvost/tree/master/C%2B%2B
