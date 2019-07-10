@@ -49,4 +49,37 @@ class SickKoala {
         }
 };
 
+class SickKoalaList {
+    private:
+        SickKoala *koala;
+        SickKoalaList *next = NULL;
+    public:
+        SickKoalaList(SickKoala *koala) {
+            this->koala = koala;
+        }
+        bool isEnd() {
+            if (this->next == NULL)
+                return (true);
+            else
+                return (false);
+        }
+        void append(SickKoalaList *next) {
+            SickKoalaList *node = this;
+
+            while (node->next != NULL) {
+                node = node->next;
+            }
+            node->next = next;
+        }
+        SickKoala *getFromName(std::string name) {
+            SickKoalaList *node = this;
+
+            while (node->koala->getName().compare(name) != 0 && node->next != NULL)
+                node = node->next;
+            if (node->koala->getName().compare(name) == 0)
+                return (node->koala);
+            return (NULL);
+        }
+};
+
 #endif

@@ -16,7 +16,7 @@ class KoalaNurse {
         ~KoalaNurse() {
             std::cout << "Nurse " << this->id << ": Finally some rest!\n";
         }
-        int get_id() {
+        int getID() {
             return this->id;
         }
         void giveDrug(std::string drug, SickKoala *koala) {

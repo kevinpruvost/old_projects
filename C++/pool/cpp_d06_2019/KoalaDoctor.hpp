@@ -22,6 +22,9 @@ class KoalaDoctor {
         }
         ~KoalaDoctor() {
         }
+        std::string getName() {
+            return this->name;
+        }
         void write_report(std::string name) {
             std::string filename = name + ".report";
             std::string meds[5] = {"mars", "Buronzand", "Viagra", "Extasy", "Eucalyptus leaf"};
