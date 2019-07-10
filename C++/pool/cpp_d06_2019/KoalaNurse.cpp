@@ -2,15 +2,17 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "KoalaNurse.hpp"
+#include "KoalaDoctor.hpp"
 
 using namespace std;
 
 int main(void)
 {
+    srandom(time(NULL));
     KoalaNurse nurse1(0);
     KoalaNurse nurse2(1);
     SickKoala koala1("Javier");
+    KoalaDoctor doc("Alain");
 
-    koala1.overDrive("Kreog! How's it going ?");
+    doc.diagnose(&koala1);
 }

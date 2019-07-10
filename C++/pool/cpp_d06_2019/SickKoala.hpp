@@ -20,6 +20,9 @@ class SickKoala {
             (this)->cout_mr_name();
             std::cout << "Kreooogg!! I'm cuuuured!\n";
         }
+        std::string getName() {
+            return this->name;
+        }
         void poke() {
             (this)->cout_mr_name();
             std::cout << "Gooeeeeerrk!!\n";

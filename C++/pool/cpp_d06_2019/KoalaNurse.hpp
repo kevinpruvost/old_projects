@@ -8,7 +8,7 @@
 class KoalaNurse {
     private :
         int id;
-        bool work = true;
+        bool work = false;
     public:
         KoalaNurse(int assign_id) {
             this->id = assign_id;
@@ -43,6 +43,7 @@ class KoalaNurse {
             return drug;
         }
         void timeCheck() {
+            (this->work) ? (this->work = false) : (this->work = true);
             if (this->work)
                 std::cout << "Nurse " << this->id << ": Time to get to work!\n";
             else
