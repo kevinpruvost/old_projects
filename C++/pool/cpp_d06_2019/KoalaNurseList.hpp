@@ -6,11 +6,20 @@
 
 class KoalaNurseList {
     private:
-        KoalaNurse *koala;
         KoalaNurseList *next = NULL;
     public:
+        KoalaNurse *koala;
         KoalaNurseList(KoalaNurse *koala) {
             this->koala = koala;
+        }
+        int getID() {
+            if (this->koala != NULL)
+                return this->koala->getID();
+            return (-1);
+        }
+        void timeCheck() {
+            if (this->koala != NULL)
+                this->koala->timeCheck();
         }
         bool isEnd() {
             if (this->next != NULL)
@@ -18,9 +27,21 @@ class KoalaNurseList {
             else
                 return (true);
         }
+        bool check_presence(KoalaNurseList *to_check) {
+            KoalaNurseList *node = this;
+
+            while (node != NULL) {
+                if (node == to_check)
+                    return (true);
+                node = node->next;
+            }
+            return (false);
+        }
         void append(KoalaNurseList *next) {
             KoalaNurseList *node = this;
 
+            if (this->check_presence(next) == true)
+                return;
             while (node->next != NULL) {
                 node = node->next;
             }
@@ -37,12 +58,14 @@ class KoalaNurseList {
         }
         KoalaNurseList *remove(KoalaNurseList *to_remove) {
             KoalaNurseList *node = this;
+            KoalaNurseList *buff = to_remove;
 
             if (to_remove == NULL)
                 return (this);
             if (this == to_remove)
             {
                 to_remove = to_remove->next;
+                buff->next = NULL;
                 return (to_remove);
             }
             else
@@ -52,6 +75,7 @@ class KoalaNurseList {
                 if (node->next == to_remove)
                     node->next = to_remove->next;
             }
+            return (NULL);
         }
         KoalaNurseList *removeFromID(int id) {
             KoalaNurse *to_remove_koala = (this)->getFromID(id);
@@ -67,6 +91,9 @@ class KoalaNurseList {
                 else
                     return ((this)->remove(to_remove));
             }
+        }
+        KoalaNurseList *getNext() {
+            return this->next;
         }
         void dump() {
             KoalaNurseList *node = this;

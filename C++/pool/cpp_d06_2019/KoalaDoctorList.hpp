@@ -6,11 +6,20 @@
 
 class KoalaDoctorList {
     private:
-        KoalaDoctor *koala;
         KoalaDoctorList *next = NULL;
     public:
+        KoalaDoctor *koala;
         KoalaDoctorList(KoalaDoctor *koala) {
             this->koala = koala;
+        }
+        std::string getName() {
+            if (this->koala != NULL)
+                return this->koala->getName();
+            return (NULL);
+        }
+        void timeCheck() {
+            if (this->koala != NULL)
+                this->koala->timeCheck();
         }
         bool isEnd() {
             if (this->next != NULL)
@@ -18,10 +27,23 @@ class KoalaDoctorList {
             else
                 return (true);
         }
+        bool check_presence(KoalaDoctorList *to_check) {
+            KoalaDoctorList *node = this;
+
+            while (node != NULL) {
+                if (node == to_check)
+                    return (true);
+                node = node->next;
+            }
+            return (false);
+        }
         void append(KoalaDoctorList *next) {
             KoalaDoctorList *node = this;
 
-            while (node->next != NULL) {
+            if (this->check_presence(next) == true)
+                return;
+            while (node->next != NULL)
+            {
                 node = node->next;
             }
             node->next = next;
@@ -37,12 +59,14 @@ class KoalaDoctorList {
         }
         KoalaDoctorList *remove(KoalaDoctorList *to_remove) {
             KoalaDoctorList *node = this;
+            KoalaDoctorList *buff = to_remove;
 
             if (to_remove == NULL)
                 return (this);
             if (this == to_remove)
             {
                 to_remove = to_remove->next;
+                buff->next = NULL;
                 return (to_remove);
             }
             else
@@ -52,6 +76,7 @@ class KoalaDoctorList {
                 if (node->next == to_remove)
                     node->next = to_remove->next;
             }
+            return (NULL);
         }
         KoalaDoctorList *removeFromID(std::string name) {
             KoalaDoctor *to_remove_koala = (this)->getFromName(name);
@@ -68,10 +93,13 @@ class KoalaDoctorList {
                     return ((this)->remove(to_remove));
             }
         }
+        KoalaDoctorList *getNext() {
+            return this->next;
+        }
         void dump() {
             KoalaDoctorList *node = this;
 
-            std::cout << "Nurses: ";
+            std::cout << "Doctors: ";
             while (node != NULL)
             {
                 if (node->koala != NULL)

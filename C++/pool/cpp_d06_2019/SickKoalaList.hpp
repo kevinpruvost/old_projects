@@ -6,11 +6,16 @@
 
 class SickKoalaList {
     private:
-        SickKoala *koala;
         SickKoalaList *next = NULL;
     public:
+        SickKoala *koala;
         SickKoalaList(SickKoala *koala) {
             this->koala = koala;
+        }
+        std::string getName() {
+            if (this->koala != NULL)
+                return this->koala->getName();
+            return (NULL);
         }
         bool isEnd() {
             if (this->next == NULL)
@@ -18,9 +23,21 @@ class SickKoalaList {
             else
                 return (false);
         }
+        bool check_presence(SickKoalaList *to_check) {
+            SickKoalaList *node = this;
+
+            while (node != NULL) {
+                if (node == to_check)
+                    return (true);
+                node = node->next;
+            }
+            return (false);
+        }
         void append(SickKoalaList *next) {
             SickKoalaList *node = this;
 
+            if (this->check_presence(next) == true)
+                return;
             while (node->next != NULL) {
                 node = node->next;
             }
@@ -37,12 +54,14 @@ class SickKoalaList {
         }
         SickKoalaList *remove(SickKoalaList *to_remove) {
             SickKoalaList *node = this;
+            SickKoalaList *buff = to_remove;
 
             if (to_remove == NULL)
                 return (this);
             if (this == to_remove)
             {
                 to_remove = to_remove->next;
+                buff->next = NULL;
                 return (to_remove);
             }
             else
@@ -52,6 +71,7 @@ class SickKoalaList {
                 if (node->next == to_remove)
                     node->next = to_remove->next;
             }
+            return (NULL);
         }
         SickKoalaList *removeFromName(std::string name) {
             SickKoala *to_remove_koala = (this)->getFromName(name);

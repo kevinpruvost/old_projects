@@ -41,9 +41,9 @@ class KoalaDoctor {
         void timeCheck() {
             (this->work) ? (this->work = false) : (this->work = true);
             if (this->work)
-                std::cout << "Dr." << this->id << ": Time to get to work!\n";
+                std::cout << "Dr." << this->name << ": Time to get to work!\n";
             else
-                std::cout << "Dr." << this->id << ": Time to go home to my eucalyptus forest!\n";
+                std::cout << "Dr." << this->name << ": Time to go home to my eucalyptus forest!\n";
         }
 };
 

@@ -15,7 +15,7 @@ int main(void)
 
     KoalaDoctor cox("Cox");
     KoalaDoctor house("House");
-    KoalaDoctor tired("Boudur -Oulot");
+    KoalaDoctor tired("Boudur-Oulot");
     KoalaDoctorList doc1(&cox);
     KoalaDoctorList doc2(&house);
     KoalaDoctorList doc3(&tired);

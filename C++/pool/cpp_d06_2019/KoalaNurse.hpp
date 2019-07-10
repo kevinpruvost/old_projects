@@ -27,11 +27,11 @@ class KoalaNurse {
             std::string	drug;
             std::size_t	pos;
 
-            report.clear();
             if (file) {
                 if (!getline(file, drug))
                     return (report);
-                if ((pos = report.find(".report", 0)) != std::string::npos && pos + 7 == report.length())
+                pos = report.find(".report", 0);
+                if (pos != std::string::npos && pos + 7 == report.length())
                     report.replace(report.length() - 7, 7, "\0");
                 else
                     return (report);
