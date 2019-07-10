@@ -28,14 +28,19 @@ class SickKoala {
             std::cout << "Gooeeeeerrk!!\n";
         }
         bool takeDrug(std::string drug) {
-            if (boost::iequals(drug, "mars")) {
-                (this)->cout_mr_name();
-                std::cout << "Mars, and it kreogs!\n";
-                return (true);
-            }
             if (drug.compare("Buronzand") == 0) {
                 (this)->cout_mr_name();
                 std::cout << "And you'll sleep right away!\n";
+                return (true);
+            }
+            for (std::size_t i = 0; i < drug.length(); i++) {
+                if (drug[i] >= 'A' && drug[i] <= 'Z')
+                    drug[i] += 32;
+            }
+            if (drug.compare("mars") == 0)
+            {
+                (this)->cout_mr_name();
+                std::cout << "Mars, and it kreogs!\n";
                 return (true);
             }
             (this)->cout_mr_name();
