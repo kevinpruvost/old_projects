@@ -1,5 +1,5 @@
 # kevinpruvost
-## Every projects I made out of school.
+## Some projects I made on my own.
 
 | Project | Description |
 |---------|-------------|
